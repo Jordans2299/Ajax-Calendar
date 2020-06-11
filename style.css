@@ -1,0 +1,150 @@
+
+body{
+    text-align: center;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+}
+#monthAndYear{
+    font-size: 40px;
+}
+table{
+    width: 84%;
+    margin: 0 auto;
+}
+
+th, td{
+    width: 12%;
+    border: 1px solid black;
+}
+tr{
+    height: 100px;
+    border: 1px solid black;
+}
+thead tr{
+    height: 30px;
+}
+.otherDay{
+    font-weight: 100;
+    font-style: italic;
+}
+#loginSignup{
+    display: inline-block;
+}
+#loginSignup button{
+    padding: 5px 18px;
+}
+#createEvent{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    left: 20%;
+    top: 20%;
+    background-color: white;
+    z-index: 100;
+}
+#closeCreateBtn{
+    float: right;
+    background-color: red;
+    border-radius: 5px;
+    border: 1px solid rgb(99, 99, 99);
+    /* font-size: 13px; */
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+#closeEventBtn{
+    float: right;
+    background-color: red;
+    border-radius: 5px;
+    border: 1px solid rgb(99, 99, 99);
+    padding: 5px 10px;
+    
+}
+.createEl{
+    margin: 20px;
+}
+.events{
+    cursor: pointer;
+}
+.events:hover{
+    background-color: rgb(240, 240, 240);
+}
+.eventTime{
+    display: inline;
+    font-style: italic;
+    color: gray;
+}
+.eventTitle{
+    display: inline;
+    color: blue;
+}
+#eventPopUp{
+    height: 30%;
+    width: 20%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    z-index: 100;
+    color: black;
+    padding: 20px;
+}
+#popHeading{
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+}
+#popDetails{
+    margin-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+#deleteEvent{
+    float: right;
+}
+#calendarTable{
+    /* display: inline-block; */
+} 
+#prevBtn, #nextBtn{
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: blue;
+}
+#createEventBtn{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+button {
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+h2{
+    display: inline-block;
+}
+input{
+    height: 25px;
+    border: 1px solid rgba(0, 0, 17, 0.363);
+}
+.editEl{
+    margin: 5px;
+}
+#editTime{
+    margin-bottom: 10px;
+}
