@@ -1,12 +1,11 @@
 <?php
 require 'databaseHandler.php';
 
-
 header("Content-Type: application/json"); // Since we are sending a JSON response here (not an HTML document), set the MIME Type to application/json
 session_start();
-// php://input recieves raw post data
+// php://input receives raw post data
 $json_str = file_get_contents('php://input');
-//This will store the data into an associative array
+//This will store the data in an associative array
 $json_obj = json_decode($json_str, true);
 
 $event_id = $json_obj['event_id'];
