@@ -8,7 +8,7 @@ let today = new Date();
 let todayMonth = today.getMonth();
 let todayYear = today.getFullYear();
 
-//Starts with the real time current month
+//Start with the real time current month
 var currentMonth = new Month(todayYear, todayMonth); 
 //tells whether user is logged
 var userLoggedIn = false;
@@ -81,7 +81,7 @@ document.getElementById('logout_btn').addEventListener("click",logoutAjax,false)
 //signing up button
 document.getElementById('signup_btn').addEventListener("click",signupAjax,false);
 
-//check if user is logged that way they're not logged out on page reload
+//check if user is logged in, that way they're not logged out on page reload
 function checkLogin(){
     fetch("includes/checkLoginHandler.php", {
         method: 'POST',
@@ -91,7 +91,7 @@ function checkLogin(){
     .then(data => data.success ?  loginDisplay(data.username,data.user_id):logoutDisplay())
     .catch(err => console.error(err));
 }
-//send data to server to login in
+//send data to server in order to login
 function loginAjax(event) {
     const username = document.getElementById("username").value; // Get the username from the form
     const password = document.getElementById("pwd").value; // Get the password from the form
@@ -108,7 +108,7 @@ function loginAjax(event) {
         .then(data => data.success ? loginDisplay(data.username,data.user_id) : alert(`You were not logged in ${data.message}`))
         .catch(err => console.error(err));
 }
-//Display when user is logged in so logout button is shown while sign up and log in buttons are not
+//Display when user is logged in, so the logout button is shown (while sign up and log in buttons are not shown)
 function loginDisplay(username, user_id){
     //hide signup and login forms and show logout button
     document.getElementById('loginSignup').style.display = 'none';
@@ -146,7 +146,7 @@ function logoutDisplay(){
     document.getElementById('calendarTable').innerHTML='';
     generateMonth();
 }
-//user is automatically logged in on sign up so it goes to login in display after they make an account
+//user is automatically logged in on sign-up so it goes to login in display after they make an account
 function signupAjax(event) {
     const username = document.getElementById("usernameCreate").value; // Get the username from the form
     const password = document.getElementById("pwdCreate").value; // Get the password from the form
@@ -216,7 +216,7 @@ function createEventAjax(event){
     updateCalendar();
  }
  
-//gets events that have that user_id
+//gets events that have the supplied user_id
  function getEventsAjax(user_id){
     const data = {'user_id':user_id};
 
@@ -238,7 +238,7 @@ function createEventAjax(event){
 
 //same as generate month except we add events to the month
 function addEvent(title, date, time,id){
-    //split the event date by components and convert to int so we can make the nessecary comparisons further down
+    //split the event date by components and convert to int so we can make the necessary comparisons further down
     let eventYear = Number(date.slice(0,4));
     let eventMonth = Number(date.slice(5,7));
     let eventDay = Number(date.slice(8,10));
@@ -281,7 +281,7 @@ function addEvent(title, date, time,id){
                     let eventTime = document.createElement('small');
                     eventTime.appendChild(document.createTextNode(time));
                     eventTime.setAttribute('class','eventTime');
-                    //save all of the event attributes in the div so we can access them when its clicked
+                    //save all of the event attributes in the div so we can access them when it's clicked
                     eventDiv.time = time;
                     eventDiv.oldTime = oldTime;
                     eventDiv.title = title;
@@ -331,7 +331,7 @@ function eventPopUp(event){
     //show the popup
     popUp.hidden = false;
 }
-//close the event popup and go back to page was before event was clicked
+//close the event popup and go back to whatever was displayed before the event was clicked
 function closeEvent(){
     document.getElementById('eventTextArea').style.display = 'block';
     document.getElementById('editEvent').hidden = true;
@@ -370,7 +370,7 @@ function editEventPopUp(event){
     document.getElementById('deleteEvent').style.display = 'none';
 }
 
-//called when makes changes button is clicked
+//called to save changes, after button is clicked
 function editEventAjax(event){
     const title = document.getElementById("editTitle").value; // Get the username from the form
     const date = document.getElementById("editDate").value; // Get the password from the form
@@ -387,7 +387,7 @@ function editEventAjax(event){
         .then(data => data.success ? editEventDisplay(data.message) : alert(`Could not edit event: ${data.message}`))
         .catch(err => console.error(err));
 }
-//reloads calendar after event is edited and clears neccessary fields
+//reloads calendar after event is edited and clears the necessary fields
 function editEventDisplay(message){
     document.getElementById("editTitle").value='';
     document.getElementById("editDate").value='';

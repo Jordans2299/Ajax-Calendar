@@ -1,6 +1,6 @@
 <?php
 
-//This page soley handles the create of a new user
+//This page solely handles the creation of a new user
 require 'databaseHandler.php';
 // php://input recieves raw post data
 $json_str = file_get_contents('php://input');
